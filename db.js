@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 //define the mongo connection url
-const mongoURL = 'mongodb://localhost:27017/hotels'
+// const mongoURL = 'mongodb://localhost:27017/hotels' // local connection 
+
+// const mongoURl = process.env.MONGODB_URL_Local; // its a online local url 
+
+const mongoURL =process.env.MONGODB_URL;  // online url connection 
+
 
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
